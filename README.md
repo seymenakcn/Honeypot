@@ -53,10 +53,5 @@ and makes testing safer.
 
 ## Running the Honeypot
 
-### Requirements
-- Go 1.20+ recommended
-- Linux / macOS (Windows works with minor adjustments)
-
-### Run
 ```bash
 go run honeypot.go
