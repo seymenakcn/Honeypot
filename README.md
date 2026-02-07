@@ -41,11 +41,11 @@ and basic connection attempts.
 
 - TCP listener using Go `net` package
 - Fake OpenSSH banner
-- Simulated 'login' and 'password' prompts
+- Simulated (`login`) and (`password`) prompts
 - Captures username and password attempts
 - Logs events to:
   -Terminal(real-time)
-  -Log File ('honeypot.log')
+  -Log File (`honeypot.log`)
 - Reads user input line-by-line
 - Supports multiple simultaneous connections
 - Minimal and easy-to-understand codebase
