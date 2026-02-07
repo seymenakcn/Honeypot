@@ -30,8 +30,8 @@ and basic connection attempts.
    - A login: prompt is displayed and the username is read
    - A password: prompt is displayed and the password is read
 3. The captured credentials are logged together with:
-   -Source IP address
-   -Timestamp
+   - Source IP address
+   - Timestamp
 4. Each connection is handled in a **separate goroutine**
 5. The server keeps running and accepts new connections continuously
 
@@ -43,9 +43,7 @@ and basic connection attempts.
 - Fake OpenSSH banner
 - Simulated (`login`) and (`password`) prompts
 - Captures username and password attempts
-- Logs events to:
-  -Terminal(real-time)
-  -Log File (`honeypot.log`)
+- Logs events to: Terminal (real-time), Log File (`honeypot.log`)
 - Reads user input line-by-line
 - Supports multiple simultaneous connections
 - Minimal and easy-to-understand codebase
