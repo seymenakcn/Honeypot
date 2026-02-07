@@ -27,17 +27,13 @@ and basic connection attempts.
 1. The program listens on a TCP port (`2222`)
 2. When a client connects:
    - A fake SSH banner is sent
-   - The client’s first input is read
-3. Each connection is handled in a **separate goroutine**
-4. The server keeps running and accepts new connections continuously
-
----
-
-## Why Port 2222?
-
-Port `2222` is commonly used as an alternative SSH port.
-Using it avoids conflicts with a real SSH service running on port `22`
-and makes testing safer.
+   - A login: prompt is displayed and the username is read
+   - A password: prompt is displayed and the password is read
+3. The captured credentials are logged together with:
+   -Source IP address
+   -Timestamp
+4. Each connection is handled in a **separate goroutine**
+5. The server keeps running and accepts new connections continuously
 
 ---
 
@@ -45,6 +41,11 @@ and makes testing safer.
 
 - TCP listener using Go `net` package
 - Fake OpenSSH banner
+- Simulated 'login' and 'password' prompts
+- Captures username and password attempts
+- Logs events to:
+  -Terminal(real-time)
+  -Log File ('honeypot.log')
 - Reads user input line-by-line
 - Supports multiple simultaneous connections
 - Minimal and easy-to-understand codebase
